@@ -1,6 +1,6 @@
 
 variable "project" {
-    default = "de-gcp-zoomcamp-project"
+    default = "de-data-422410"
  }
 
 variable "region" {

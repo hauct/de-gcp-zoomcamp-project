@@ -1,0 +1,1 @@
+export GOOGLE_APPLICATION_CREDENTIALS=credentials/de-data-422410-0e2fe51d4d39.json
