@@ -1,0 +1,10 @@
+pandas
+pandas-gbq
+prefect
+prefect-gcp
+prefect-dbt
+dbt-core
+dbt-bigquery 
+google-cloud-storage
+beautifulsoup4
+python-dotenv

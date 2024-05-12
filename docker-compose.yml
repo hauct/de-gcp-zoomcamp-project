@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  agent:
+    image: python_prefect_dbt
+    restart: always
+    volumes:
+      - ${Docker_volpath}:/root/prefect-docker-compose
+    entrypoint: [ "prefect", "agent", "start", "-q", "default" ]
+    environment:
+      - PREFECT_API_URL=${Prefect_API_Login}
+      - PREFECT_API_KEY=${Prefect_API_KEY}
+      - PREFECT_LOCAL_STORAGE_PATH=${Docker_volpath}:/root/prefect-docker-compose
+    profiles: ["agent"]
+
+  job:
+    image: python_prefect_dbt
+    entrypoint: [ "python3" ]
+    working_dir: /root/prefect-docker-compose
+    volumes:
+      - ${Docker_volpath}:/root/prefect-docker-compose
+    environment:
+      - PREFECT_API_URL=${Prefect_API_Login}
+      - PREFECT_API_KEY=${Prefect_API_KEY}
+      - PREFECT_LOCAL_STORAGE_PATH=${Docker_volpath}:/root/prefect-docker-compose
+    profiles: ["job"]

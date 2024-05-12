@@ -7,7 +7,7 @@ basedir=os.getcwd()[:-5]
 print(basedir)
 load_dotenv(os.path.join(basedir, '../.env'))
 
-def _build_endurl(parameter,endpointpara):
+def _build_endurl(endpointpara,parameter):
     para_all = {}
     for name,value in parameter['kwarg'].items():
         if name in endpointpara:
@@ -24,9 +24,6 @@ def _build_url(endpoint=None,endpointpara=None,map=None,**kwarg):
         main_url = endpoint_url.main_url_geo
     else:
         main_url = endpoint_url.main_url
-    end_url = _build_endurl(parameter=kwarg,endpointpara=endpointpara)
+    end_url = _build_endurl(endpointpara=endpointpara, parameter=kwarg)
 
     return main_url + endpoint + end_url
-
-data = _build_url(endpoint=category_endpoint_url.category, endpointpara=category_endpoint_url.para_category)
-print(data)
