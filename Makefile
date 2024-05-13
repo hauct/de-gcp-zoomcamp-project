@@ -21,6 +21,8 @@ vm-connect:
 
 vm-setup:
 	sudo apt-get update -y
+	sudo apt install python3-pip -y
+	sudo pip install make python-dotenv
 	sudo apt install docker.io -y
 	sudo chmod 666 /var/run/docker.sock
 	sleep 1
