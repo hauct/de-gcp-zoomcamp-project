@@ -20,9 +20,6 @@ vm-connect:
 	ssh -i .ssh/fredkey ${Email}@${vm_Externalip}
 
 vm-setup:
-	sudo apt-get update -y
-	sudo apt install python3-pip -y
-	sudo pip install make python-dotenv
 	sudo apt install docker.io -y
 	sudo chmod 666 /var/run/docker.sock
 	sleep 1
@@ -33,11 +30,8 @@ vm-setupdocker:
 	docker-compose --version
 
 vm-copycred:
-	gcloud compute scp --project="${Gcp_Project_id}" --zone="${Gcp_Zone}" .env ${Email}@fred-productionapi:"./de-gcp-zoomcamp-project/"
-	gcloud compute scp --project="${Gcp_Project_id}" --zone="${Gcp_Zone}" cred/credential.json ${Email}@fred-productionapi:"./de-gcp-zoomcamp-project/cred/"
-
-vm-codecopy:
-	gcloud compute scp --project="${Gcp_Project_id}" --zone="${Gcp_Zone}" flows/Fred_MapAPI.py ${Email}@fred-productionapi:"./de-gcp-zoomcamp-project/flows/"
+	gcloud compute scp --project="${Gcp_Project_id}" --zone="${Gcp_Zone}" .env.config ${Email}@${vm_Externalip}:"./de-gcp-zoomcamp-project/"
+	gcloud compute scp --project="${Gcp_Project_id}" --zone="${Gcp_Zone}" cred/credential.json ${Email}@${vm_Externalip}:"./de-gcp-zoomcamp-project/cred/"
 
 docker-build:
 	docker build --build-arg Prefect_Workspace=${Prefect_Workspace} --build-arg Prefect_API_KEY=${Prefect_API_KEY} -f dockerfile -t python_prefect_dbt .
