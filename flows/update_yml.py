@@ -4,10 +4,9 @@ from dotenv import load_dotenv
 basedir = os.getcwd()
 
 # Specify the correct path to the .env file
-env_path = os.path.join(basedir, '.env')
+env_path = os.path.join(basedir, './.env.config')
 
 load_dotenv(env_path)
-
 
 def main():
     replace_list = ["Gcp_Project_id","Gcp_Zone","Gcp_Region","Account_id","Email","Gcs_Bucket_name"]

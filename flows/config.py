@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 import os
 
 basedir=os.getcwd()
-load_dotenv(os.path.join(basedir, './.env'))
+load_dotenv(os.path.join(basedir, './.env.config'))
 
 class endpoint_url:
     main_url                        = 'https://api.stlouisfed.org/fred'

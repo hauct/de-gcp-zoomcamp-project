@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 from prefect.orion.schemas.schedules import CronSchedule
 
 basedir=os.getcwd()
-load_dotenv(os.path.join(basedir, './.env'))
+load_dotenv(os.path.join(basedir, './.env.config'))
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.getenv("Google_Cred_path")
 
 @task(name='Get Web Content Category',log_prints=True)

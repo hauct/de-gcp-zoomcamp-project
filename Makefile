@@ -1,4 +1,4 @@
-include .env
+include .env.config
 
 update-yml-window:
 	python flows/update_yml.py

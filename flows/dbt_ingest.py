@@ -1,6 +1,7 @@
 from prefect import flow
 from prefect_dbt.cli.commands import DbtCoreOperation
 import argparse
+
 @flow(name='DBT ingest')
 def main(arg) :
     target = arg.target

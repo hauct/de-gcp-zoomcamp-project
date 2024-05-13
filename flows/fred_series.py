@@ -11,7 +11,7 @@ from prefect.orion.schemas.schedules import CronSchedule
 from dotenv import load_dotenv
 
 basedir=os.getcwd()
-load_dotenv(os.path.join(basedir, './.env'))
+load_dotenv(os.path.join(basedir, './.env.config'))
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.getenv("Google_Cred_path")
 
