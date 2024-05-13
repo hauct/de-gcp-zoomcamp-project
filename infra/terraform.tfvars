@@ -1,0 +1,6 @@
+project_id = "de-data-422410"
+zone ="asia-southeast1-b"
+region = "asia-southeast1"
+account_id = "nyc-de-zoomcamp"
+email ="hauct1996"
+bucketname = "fred-etedata-prod"

@@ -1,1 +1,3 @@
-credentials
+cred
+.env
+.ssh

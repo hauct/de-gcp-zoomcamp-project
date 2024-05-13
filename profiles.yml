@@ -1,0 +1,25 @@
+final_project_fred:
+  outputs:
+    dev:
+      type: bigquery
+      dataset: dbt_dev
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: cred/credential.json
+      location: asia-southeast1
+      method: service-account
+      priority: interactive
+      project: de-data-422410
+      threads: 1
+    prod:
+      type: bigquery
+      dataset: dbt_prod
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: cred/credential.json
+      location: asia-southeast1
+      method: service-account
+      priority: interactive
+      project: de-data-422410
+      threads: 1
+  target: prod
