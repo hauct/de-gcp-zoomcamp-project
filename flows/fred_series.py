@@ -7,11 +7,11 @@ from prefect import flow,task
 from google.cloud import storage
 from config import query_bq,clean_df
 from prefect.deployments import Deployment
-from prefect.orion.schemas.schedules import CronSchedule
+from prefect.server.schemas.schedules import CronSchedule
 from dotenv import load_dotenv
 
 basedir=os.getcwd()
-load_dotenv(os.path.join(basedir, './.env.config'))
+load_dotenv(os.path.join(basedir, './.env'))
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.getenv("Google_Cred_path")
 

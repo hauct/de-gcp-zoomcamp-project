@@ -5,7 +5,7 @@ import os
 
 basedir=os.getcwd()[:-5]
 print(basedir)
-load_dotenv(os.path.join(basedir, '../.env.config'))
+load_dotenv(os.path.join(basedir, '../.env'))
 
 def _build_endurl(endpointpara,parameter):
     para_all = {}

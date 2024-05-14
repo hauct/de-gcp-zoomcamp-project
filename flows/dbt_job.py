@@ -1,7 +1,7 @@
 from prefect import flow
 from prefect_dbt.cli.commands import DbtCoreOperation
 from prefect.deployments import Deployment
-from prefect.orion.schemas.schedules import CronSchedule
+from prefect.server.schemas.schedules import CronSchedule
 import argparse
 
 @flow(name='DBT function prod')

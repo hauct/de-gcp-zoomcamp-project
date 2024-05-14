@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 basedir = os.getcwd()
 
 # Specify the correct path to the .env file
-env_path = os.path.join(basedir, './.env.config')
+env_path = os.path.join(basedir, './.env')
 
 load_dotenv(env_path)
 
