@@ -111,4 +111,3 @@ def main():
     # Upload to bucket
     bucket.blob(uppload_path).upload_from_string(df_series.to_parquet(), 'text/parquet')
     return True
-
